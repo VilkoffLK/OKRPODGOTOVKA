@@ -10,10 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- React 18 & Babel Standalone for Single-File GitHub Pages Deployment -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- React 18 & Babel Standalone via Cloudflare CDNJS (Надёжно для GitHub Pages) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -41,9 +41,15 @@
   </style>
 </head>
 <body class="bg-[#08090E] text-slate-100 min-h-screen overflow-x-hidden">
-  <div id="root"></div>
+  <div id="root">
+    <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:#94a3b8;font-family:sans-serif;text-align:center;padding:20px;">
+      <div style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#8b5cf6,#ec4899);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:20px;">⚡</div>
+      <div style="font-weight:700;color:#f1f5f9;font-size:16px;">Загрузка VibeQuiz // ККР...</div>
+      <div style="font-size:12px;max-width:320px;">Если экран не обновился за 5 секунд, проверьте подключение к интернету или откройте страницу без VPN/блокировщика скриптов.</div>
+    </div>
+  </div>
 
-  <script type="text/babel">
+  <script type="text/babel" data-presets="env,react">
     const { useState, useEffect, useMemo } = React;
 
     // ==========================================
